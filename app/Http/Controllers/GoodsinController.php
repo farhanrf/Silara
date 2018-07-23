@@ -45,6 +45,9 @@ class GoodsinController extends Controller
      */
     public function store(Request $request)
     {
+
+        $tersediaString = 'Tersedia';
+        //Insert to goodsin
         $barangMasuk = new Goodsin();
         $barangMasuk->name = $request->name;
         $barangMasuk->device_id = $request->device_id;
@@ -52,12 +55,15 @@ class GoodsinController extends Controller
         $barangMasuk->location_id = $request->location_id;
         $barangMasuk->users_id = $request->users_id;
         $barangMasuk->category_id = $request->category_id;
+
+        //Insert to goodsall
         $dataBarang = new Goodsall();
         $dataBarang->name = $request->name;
         $dataBarang->device_id = $request->device_id;
         $dataBarang->date = $request->date;
         $dataBarang->location_id = $request->location_id;
         $dataBarang->users_id = $request->users_id;
+        $dataBarang->status = $tersediaString;
         $dataBarang->category_id = $request->category_id;
         $dataBarang->save();
         $barangMasuk->save();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Goodsin;
+use App\Goodsout;
 use App\Device;
 use App\Location;
 use App\Category;
@@ -27,6 +28,7 @@ class CreateGoodsallTable extends Migration
             $table->foreign('location_id')->references('id')->on('locations')->onUpdate('cascade')->onDelete('set null');
             $table->integer('users_id')->nullable()->unsigned();
             $table->foreign('users_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+            $table->string('status');
             $table->integer('category_id')->nullable()->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('set null');
             $table->timestamps();

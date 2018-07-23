@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Goodsout;
+use App\Goodsall;
 use App\Device;
 use App\Location;
 use App\Category;
@@ -44,17 +45,30 @@ class GoodsoutController extends Controller
      */
     public function store(Request $request)
     {
+        $tidaktersediaString = 'Tidak Tersedia';
+        //Insert to goodsall
         $barangKeluar = new Goodsout();
         $barangKeluar->name = $request->name;
         $barangKeluar->device_id = $request->device_id;
         $barangKeluar->date = $request->date;
         $barangKeluar->location_id = $request->location_id;
+        $barangKeluar->receiver_id = $request->receiver_id;
         $barangKeluar->users_id = $request->users_id;
-        $barangKeluar->status = $request->status;
         $barangKeluar->category_id = $request->category_id;
 
+        //Insert to goodsall
+        $dataBarang = new Goodsall();
+        $dataBarang->name = $request->name;
+        $dataBarang->device_id = $request->device_id;
+        $dataBarang->date = $request->date;
+        $dataBarang->location_id = $request->location_id;
+        $dataBarang->users_id = $request->users_id;
+        $dataBarang->status = $tidaktersediaString;
+        $dataBarang->category_id = $request->category_id;
+        $dataBarang->save();
         $barangKeluar->save();
           return redirect()->route('barangkeluar.index')->with('success','Barang berhasil ditambahkan');
+          return redirect()->route('databarang.index')->with('success','Barang berhasil ditambahkan');
     }
 
     /**
@@ -98,8 +112,8 @@ class GoodsoutController extends Controller
         $barangKeluar->device_id = $request->device_id;
         $barangKeluar->date = $request->date;
         $barangKeluar->location_id = $request->location_id;
+        $barangKeluar->receiver_id = $request->receiver_id;
         $barangKeluar->users_id = $request->users_id;
-        $barangKeluar->status = $request->status;
         $barangKeluar->category_id = $request->category_id;
         $barangKeluar->save();
           return redirect()->route('barangkeluar.index')->with('success','Berhasil Diperbaharui');

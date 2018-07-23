@@ -15,6 +15,7 @@ class CreateGoodsoutsTable extends Migration
     {
       Schema::create('goodsouts', function (Blueprint $table) {
            $table->increments('id');
+           $table->string('name');
            $table->integer('device_id')->nullable()->unsigned();
            $table->foreign('device_id')->references('id')->on('devices')->onUpdate('cascade')->onDelete('set null');
            $table->string('date');

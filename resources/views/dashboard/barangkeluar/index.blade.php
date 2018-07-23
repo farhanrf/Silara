@@ -42,8 +42,8 @@
                                 <th>Date</th>
                                 <th>Location</th>
                                 <th>User</th>
-                                <th>Status</th>
                                 <th>Category</th>
+                                <th>Action</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -57,7 +57,6 @@
                                        <td style="vertical-align: middle;">{{ $barangKeluar->date }}</td>
                                        <td style="vertical-align: middle;">{{ $barangKeluar->location->name }}</td>
                                        <td style="vertical-align: middle;">{{ $barangKeluar->users->name }}</td>
-                                       <td style="vertical-align: middle;">{{ $barangKeluar->status }}</td>
                                        <td style="vertical-align: middle;">{{ $barangKeluar->category->name }}</td>
                                        <td style="vertical-align: middle;">
                                            <div class="row">

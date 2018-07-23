@@ -1,15 +1,15 @@
 @extends('dashboard.layouts.master')
-@section('title', 'Barang Masuk')
+@section('title', 'Data Barang')
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Barang Masuk
+            Data Barang
             <small>Simomen</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
-            <li class="active">Barang Masuk</li>
+            <li class="active">Data Barang</li>
         </ol>
     </section>
 
@@ -19,7 +19,7 @@
         <div class="row pull-right">
             <div class="col-md-3">
                 <p>
-                    <a href="{{ route('barangkmasuk.index') }}" class="btn btn-primary">
+                    <a href="{{ route('databarang.index') }}" class="btn btn-primary">
                         Kembali ke Daftar
                     </a>
                 </p>
@@ -34,7 +34,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" class="form-horizontal" role="form" method="POST" action="{{ route('barangmasuk.update', $barangMasuk->id) }}" enctype="multipart/form-data">
+                    <form role="form" class="form-horizontal" role="form" method="POST" action="{{ route('databarang.update', $dataBarang->id) }}" enctype="multipart/form-data">
 
                         {{ csrf_field() }}
 
@@ -54,31 +54,31 @@
 
                             <div class="box-body">
                                <div class="form-group">
-                                    <label>Tanggal Masuk</label>
+                                    <label>Tanggal</label>
                                     <div class="input-group date">
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="text" class="form-control pull-right" id="datepicker" name="date" value="{{ $barangMasuk->date }}">
+                                        <input type="text" class="form-control pull-right" id="datepicker" name="date" value="{{ $dataBarang->date }}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input id="name" type="text" name="name" class="form-control" placeholder="Nama Barang" value="{{ $barangMasuk->name }}">
+                                    <input id="name" type="text" name="name" class="form-control" placeholder="Nama Barang" value="{{ $dataBarang->name }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Device Id</label>
-                                    <select class="form-control select2" style="width: 100%;" name="device_id" value="{{ $barangMasuk->device_id }}">
+                                    <select class="form-control select2" style="width: 100%;" name="device_id" value="{{ $dataBarang->device_id }}">
                                         @foreach($devices as $device)
-                                            <option value="{{ $device->id }}" {{ ( $barangMasuk->device_id == $device->id ) ? 'selected' : '' }}>{{ $device->no_registration }}</option>
+                                            <option value="{{ $device->id }}" {{ ( $dataBarang->device_id == $device->id ) ? 'selected' : '' }}>{{ $device->no_registration }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Location</label>
-                                    <select class="form-control select2" style="width: 100%;" name="location_id" value="{{ $barangMasuk->location_id }}">
+                                    <select class="form-control select2" style="width: 100%;" name="location_id" value="{{ $dataBarang->location_id }}">
                                         @foreach($locations as $location)
-                                          <option value="{{ $location->id }}" {{ ( $barangMasuk->location_id == $location->id ) ? 'selected' : '' }}>{{ $location->name }}</option>
+                                          <option value="{{ $location->id }}" {{ ( $dataBarang->location_id == $location->id ) ? 'selected' : '' }}>{{ $location->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -87,9 +87,9 @@
 
                                 <div class="form-group">
                                     <label for="name">Category</label>
-                                    <select class="form-control select2" style="width: 100%;" name="category_id" value="{{ $barangMasuk->category_id }}">
+                                    <select class="form-control select2" style="width: 100%;" name="category_id" value="{{ $dataBarang->category_id }}">
                                         @foreach($categories as $category)
-                                            <option value="{{ $category->id }}" {{ ( $barangKeluar->category_id == $category->id ) ? 'selected' : '' }}>{{ $category->name }}</option>
+                                            <option value="{{ $category->id }}" {{ ( $dataBarang->category_id == $category->id ) ? 'selected' : '' }}>{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
