@@ -58,7 +58,7 @@
               <div class="col-lg-4 col-xs-4">
                 <div class="small-box bg-{{ $cardColor[$num] }}">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3>{{ $categories->count() }}</h3>
 
                         <p>{{ $category->name }}</p>
                     </div>

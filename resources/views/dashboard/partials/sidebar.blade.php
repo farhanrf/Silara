@@ -35,13 +35,13 @@
 
             <!--menu barang masuk-->
             <li class="{{ Request::is('dashboard/barangmasuk') ? "active" : "" }}">
-                <a href="{{ route('barangmasuk.index') }}"><i class="fa fa-upload"></i> <span>Alokasi Barang Masuk</span>
+                <a href="{{ route('barangmasuk.index') }}"><i class="fa fa-download"></i> <span>Alokasi Barang Masuk</span>
                 </a>
             </li>
 
             <!--menu barang keluar-->
             <li class="{{ Request::is('dashboard/barangkeluar') ? "active" : "" }}">
-                <a href="{{ route('barangkeluar.index') }}"><i class="fa fa-download"></i> <span>Alokasi Barang Keluar</span>
+                <a href="{{ route('barangkeluar.index') }}"><i class="fa fa-upload"></i> <span>Alokasi Barang Keluar</span>
                 </a>
             </li>
 

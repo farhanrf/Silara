@@ -103,6 +103,11 @@ class GoodsallController extends Controller
 		  return redirect()->route('databarang.index')->with('success','Berhasil diperbaharui');
     }
 
+    public function search(Request $request)
+    {
+        $dataBarang = $request->get('search');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

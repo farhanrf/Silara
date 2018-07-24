@@ -39,4 +39,5 @@ Route::prefix('dashboard')->group(function () {
 	Route::resource('/barangmasuk', 'GoodsinController');
 	Route::resource('/barangkeluar', 'GoodsoutController');
 	Route::resource('/databarang' , 'GoodsallController');
+	
 });
